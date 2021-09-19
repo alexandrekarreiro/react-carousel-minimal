@@ -10,6 +10,11 @@
     "dist",
     "README.md"
   ],
+  "exports": {
+    ".": "./dist",
+    "./next": "./dist/next.js",
+    "./stylesheet": "./dist/react-carousel-minimal.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sahilsaha7773/react-carousel-minimal.git"

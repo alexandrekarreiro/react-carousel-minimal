@@ -15,8 +15,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactEasySwipe = _interopRequireDefault(require("react-easy-swipe"));
 
-require("./styles/index.css");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -70,6 +68,9 @@ function Carousel(_ref) {
       };
     }
   }, [isPaused, change]);
+  (0, _react.useEffect)(() => {
+    console.log(module);
+  }, []);
 
   function scrollTo(el) {
     const elLeft = el.offsetLeft + el.offsetWidth;
@@ -78,12 +79,12 @@ function Carousel(_ref) {
     if (elLeft >= elParentLeft + el.parentNode.scrollLeft) {
       el.parentNode.scroll({
         left: elLeft - elParentLeft,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     } else if (elLeft <= el.parentNode.offsetLeft + el.parentNode.scrollLeft) {
       el.parentNode.scroll({
         left: el.offsetLeft - el.parentNode.offsetLeft,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
   } //Listens to slide state changes

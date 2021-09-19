@@ -12,6 +12,4 @@ Object.defineProperty(exports, "Carousel", {
 
 var _Carousel = _interopRequireDefault(require("./components/Carousel"));
 
-require("./react-carousel-minimal.css");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
