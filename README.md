@@ -122,6 +122,16 @@ function App() {
 export default App;
 
 ```
+
+## Usage on Next.js
+```js
+import { Carousel } from 'react-carousel-minimal/next';
+
+// You must include the stylesheet when using Next.js
+import 'react-carousel-minimal/stylesheet';
+
+```
+
 <div align="center">
   <img src="https://user-images.githubusercontent.com/35343652/128626830-f2920f94-8ca0-4f10-badc-5ba6bbae5a72.png"/>
 </div>
