@@ -59,17 +59,25 @@ function Carousel({
   }, []);
 
   function scrollTo(el) {
-    const elLeft = el.offsetLeft + el.offsetWidth;
-    const elParentLeft = el.parentNode.offsetLeft + el.parentNode.offsetWidth;
+    if (el) {
+      const elLeft = el.offsetLeft + el.offsetWidth;
+      const elParentLeft = el.parentNode.offsetLeft + el.parentNode.offsetWidth;
 
-    // check if element not in view
-    if (elLeft >= elParentLeft + el.parentNode.scrollLeft) {
-      el.parentNode.scroll({ left: elLeft - elParentLeft, behavior: "smooth" });
-    } else if (elLeft <= el.parentNode.offsetLeft + el.parentNode.scrollLeft) {
-      el.parentNode.scroll({
-        left: el.offsetLeft - el.parentNode.offsetLeft,
-        behavior: "smooth",
-      });
+      // check if element not in view
+      if (elLeft >= elParentLeft + el.parentNode.scrollLeft) {
+        el.parentNode.scroll({
+          left: elLeft - elParentLeft,
+          behavior: "smooth",
+        });
+      } else if (
+        elLeft <=
+        el.parentNode.offsetLeft + el.parentNode.scrollLeft
+      ) {
+        el.parentNode.scroll({
+          left: el.offsetLeft - el.parentNode.offsetLeft,
+          behavior: "smooth",
+        });
+      }
     }
   }
 
